@@ -7,7 +7,7 @@ kokoro = Kokoro("kokoro-v1.0.onnx", "voices-v1.0.bin")
 
 # --- Atlas's voice: 40% Fable + 60% Lewis ---
 ATLAS_VOICE = kokoro.get_voice_style("bm_fable") * 0.4 + kokoro.get_voice_style("bm_lewis") * 0.6
-ATLAS_SPEED = 0.9
+ATLAS_SPEED = 1.0
 
 # --- Pronunciation dictionary: written word -> spelling the engine reads correctly ---
 PRONUNCIATIONS = {
@@ -18,7 +18,6 @@ PRONUNCIATIONS = {
 def fix_pronunciation(text):
     """Swap tricky words for spellings the voice engine reads correctly."""
     for word, spoken in PRONUNCIATIONS.items():
-        # \b = whole word only, so "Jaden" is replaced but not "Jadenville"
         text = re.sub(rf"\b{re.escape(word)}\b", spoken, text, flags=re.IGNORECASE)
     return text
 

@@ -30,6 +30,7 @@ The assistant is named **Atlas**: a warm, polite, charismatic British male voice
 | Text-to-speech engine | **Kokoro** (`kokoro-onnx`) | Much more natural than Piper, runs offline, Apache-2.0 license |
 | Rejected | Piper `en_GB-alan-medium` | Sounded dark, robotic and eerie |
 | Atlas voice | **40% `bm_fable` + 60% `bm_lewis`**, speed **0.9**, `lang="en-gb"` | User's favorite after tuning. Blending also makes it less generic than one stock voice |
+| Brain | Claude API, **`claude-haiku-5-5`** with effort `low` (`chat_atlas.py`) | The user chose the cheapest model. The key is in `.env` as `CLAUDE_API`, loaded with `python-dotenv` |
 | Name pronunciation | Pronunciation dictionary that swaps text before synthesis: `"Jaden" → "Jayden"` | The engine misreads "Jaden". "Jayden" and "Jaiden" both work |
 
 ## Files

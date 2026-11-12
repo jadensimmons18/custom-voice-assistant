@@ -1,4 +1,7 @@
-.DS_STORE.venv/
+.DS_Store
+.venv/
+__pycache__/
+.env
 *.onnx
 *.onnx.json
 *.bin
